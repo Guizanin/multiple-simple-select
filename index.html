@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .selectCustom{position: relative;padding: 10px;display: block;
+            background:#aaa;
+        }
+        .selectCustom titulo{display: inline-block;width: calc(100% - 30px);vertical-align: middle}
+        .selectCustom .header .icon-select{width: 15px;vertical-align: middle;transform: rotate(90deg);display: inline-block;height: 16px;}
+        .selectCustom > .openCloseLista{position: absolute;width: 100%;height: 100%;left: 0;top: 0;margin: 0;opacity: 0;}
+        .selectCustom lista{display:none;position:absolute;width: 100%;left: 0;top:100%;z-index: 999;
+            background:#f1f1f1
+        }
+        .selectCustom linha, .selectCustom todos{display:inline-block;position:relative;width: 100%;box-sizing: border-box}
+        .selectCustom linha label, .selectCustom todos label{position: absolute;width:100%;height: 100%;top: 0;left: 0;z-index: 99;opacity: 0;}
+        .selectCustom linha input, .selectCustom todos input{position: absolute;top: 0;bottom: 0;left:10px;margin: auto}
+        .selectCustom linha descricao, .selectCustom todos descricao{display:block;padding:4px 15px 2px 30px}
+        .selectCustom linha label:hover ~ descricao, .selectCustom todos label:hover ~ descricao{
+            background: #00c3ff
+        }
+        .selectCustom > .openCloseLista:checked ~ lista{display:block}
+    </style>
+</head>
+<body>
+    <div>
+        <H2>Multi selects</H2>
+        <div class="wrap-select" style="width:200px;display:inline-block;">
+            <select name="" id="select-primeiro">
+                <option value="v2">Alguns</option>
+                <option value="v3">Parcial</option>
+            </select>
+        </div>
+
+        <div class="wrap-select2" style="width:200px;display:inline-block;margin-left: 30px">
+            <select name="" id="select-segundo">
+                <option value="v2">Alguns</option>
+                <option value="v3">Parcial</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <h2>Simples</h2>
+
+        <div class="wrap-select3" style="width:200px;display:inline-block;">
+            <select name="" id="select-terceiro">
+                <option value="v2">Alguns</option>
+                <option value="v3">Parcial</option>
+            </select>
+        </div>
+    </div>
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script src="custom.js"></script>
+
+    <script>
+        
+        // função com options - multi
+        $('#select-primeiro').criaSelect({
+            multi:true,
+            todos:true,
+            classSelect:["class1 class2 classe3"],
+            classLinhas:["linhaTal linhaSuper"],
+            classCheckbox:["checkTal checkSuper"],
+            classDescricao:["descricaoTal"]
+        });
+        // função com options - multi
+        $('#select-segundo').criaSelect({
+            multi:true,
+            classSelect:["class1 class2 classe3"],
+            classLinhas:["linhaTal linhaSuper"],
+            classCheckbox:["checkTal checkSuper"],
+            classDescricao:["descricaoTal"]
+        });
+        // função com options - simples
+        $('#select-terceiro').criaSelect({});
+
+
+    </script>
+<!-- 
+    
+ -->
+</body>
+</html>
+
+
